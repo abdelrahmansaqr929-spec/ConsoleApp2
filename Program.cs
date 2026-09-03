@@ -40,6 +40,11 @@
             //atherwise Q5:the output will be 400
 
             #endregion
+            #region answer_08
+            ReplaceArray(ref bookPrices);
+            Console.WriteLine(bookPrices.Length);
+            #endregion
+
 
 
 
@@ -64,6 +69,11 @@
         static void AddBonusPagesR(ref int pages)
         {
             pages += 5;
+        }
+
+        static void ReplaceArray(ref double[] prices)
+        {
+            prices = new double[] { 10.0, 12.5, 15.0 };
         }
 
     }
