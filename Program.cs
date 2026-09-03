@@ -51,11 +51,14 @@ namespace ConsoleApp2
             Console.WriteLine(price);
             #endregion
             #region answer_10
-            printBookinfo (book,pages);
+            printBookinfo(book, pages);
             printBookinfo(book);
             #endregion
             #region answer_11
-            printBookinfo(pages:pages, title:book);
+            printBookinfo(pages: pages, title: book);
+            #endregion
+            #region answer_12
+            printalltitles(book, "Refactoring", "Design Patterns");
             #endregion
 
 
@@ -68,13 +71,13 @@ namespace ConsoleApp2
         {
             Console.WriteLine($"Book Title: {book}");
         }
-        static void  AddBonusPages(int pages)
+        static void AddBonusPages(int pages)
         {
             pages += 5;
         }
         static void ApplyDiscount(double[] prices)
         {
-            prices[0] -= 5.0; 
+            prices[0] -= 5.0;
         }
         static void AddBonusPagesR(ref int pages)
         {
@@ -87,7 +90,7 @@ namespace ConsoleApp2
         }
         static bool TryGetPrice(string bookTitle, out double price)
         {
-             if (bookTitle == "Clean Code")
+            if (bookTitle == "Clean Code")
             {
                 price = 25.5;
                 return true;
@@ -97,11 +100,18 @@ namespace ConsoleApp2
                 price = 0.0;
                 return false;
             }
-        }   
-        static void printBookinfo(string title, int pages=300)
+        }
+        static void printBookinfo(string title, int pages = 300)
         {
             Console.WriteLine($"Title: {title}, Pages: {pages}");
         }
+        static void printalltitles(params string[] titles)
+        {
+            foreach (string title in titles)
+            {
+                Console.WriteLine(title);
+            }
 
+        }
     }
 }
