@@ -21,6 +21,14 @@
             printbooktitles(book);
 
             #endregion
+            #region answer_05
+            int pages = 400;
+            AddBonusPages(pages);
+            Console.WriteLine(pages);
+            //the expected output is 400 because the method AddBonusPages modifies a local copy of the pages variable, not the original variable in the Main method.
+            //To modify the original variable, you would need to pass it by reference using the ref keyword.
+            #endregion
+
 
 
         }
@@ -30,8 +38,14 @@
         }
         static void printbooktitles(string book)
         {
-                Console.WriteLine($"Book Title: {book}");
+            Console.WriteLine($"Book Title: {book}");
+        }
+        static void  AddBonusPages(int pages)
+        {
+            pages += 5;
+
+
         }
 
-
+    }
 }
