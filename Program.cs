@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp2
+﻿using System.ComponentModel;
+
+namespace ConsoleApp2
 {
     internal class Program
     {
@@ -17,7 +19,7 @@
             #endregion
             #region answer_04
 
-            string book = "clean code";
+            string book = "Clean Code";
             printbooktitles(book);
 
             #endregion
@@ -44,9 +46,14 @@
             ReplaceArray(ref bookPrices);
             Console.WriteLine(bookPrices.Length);
             #endregion
-
-
-
+            #region answer_09
+            TryGetPrice(book, out double price);
+            Console.WriteLine(price);
+            #endregion
+            #region answer_10
+            printBookinfo (book,pages);
+            printBookinfo(book);
+            #endregion
 
 
         }
@@ -74,6 +81,23 @@
         static void ReplaceArray(ref double[] prices)
         {
             prices = new double[] { 10.0, 12.5, 15.0 };
+        }
+        static bool TryGetPrice(string bookTitle, out double price)
+        {
+             if (bookTitle == "Clean Code")
+            {
+                price = 25.5;
+                return true;
+            }
+            else
+            {
+                price = 0.0;
+                return false;
+            }
+        }   
+        static void printBookinfo(string title, int pages=300)
+        {
+            Console.WriteLine($"Title: {title}, Pages: {pages}");
         }
 
     }
