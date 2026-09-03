@@ -54,6 +54,9 @@ namespace ConsoleApp2
             printBookinfo (book,pages);
             printBookinfo(book);
             #endregion
+            #region answer_11
+            printBookinfo(pages:pages, title:book);
+            #endregion
 
 
         }
