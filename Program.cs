@@ -9,10 +9,20 @@
             Console.WriteLine(prices[1]);
             #endregion
             #region answer_02
-            int[,] ShelfCopeis = { {3,5},{1,4} };
-            Console.WriteLine(ShelfCopeis[1,0]);
+            int[,] ShelfCopeis = { { 3, 5 }, { 1, 4 } };
+            Console.WriteLine(ShelfCopeis[1, 0]);
+            #endregion
+            #region answer_03
+            PrintWelcomeMessage();
             #endregion
 
+
+        }
+     static void PrintWelcomeMessage()
+        {
+            Console.WriteLine("Welcome to the Library");
         }
     }
+
+
 }
