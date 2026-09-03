@@ -34,7 +34,13 @@
             Console.WriteLine(bookPrices[0]);
             //the expected output is 20.5 because the ApplyDiscount method modifies the first element of the bookPrices array, which is a reference type. Therefore, the change is reflected in the original array. 
             #endregion
-            
+            #region answer_07
+            AddBonusPagesR(ref pages);
+            //the output will be 405
+            //atherwise Q5:the output will be 400
+
+            #endregion
+
 
 
 
@@ -54,6 +60,10 @@
         static void ApplyDiscount(double[] prices)
         {
             prices[0] -= 5.0; 
+        }
+        static void AddBonusPagesR(ref int pages)
+        {
+            pages += 5;
         }
 
     }
