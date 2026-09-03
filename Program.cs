@@ -28,6 +28,13 @@
             //the expected output is 400 because the method AddBonusPages modifies a local copy of the pages variable, not the original variable in the Main method.
             //To modify the original variable, you would need to pass it by reference using the ref keyword.
             #endregion
+            #region answer_06
+            double[] bookPrices = { 25.5, 40.0 };
+            ApplyDiscount(bookPrices);
+            Console.WriteLine(bookPrices[0]);
+            //the expected output is 20.5 because the ApplyDiscount method modifies the first element of the bookPrices array, which is a reference type. Therefore, the change is reflected in the original array. 
+            #endregion
+            
 
 
 
@@ -43,8 +50,10 @@
         static void  AddBonusPages(int pages)
         {
             pages += 5;
-
-
+        }
+        static void ApplyDiscount(double[] prices)
+        {
+            prices[0] -= 5.0; 
         }
 
     }
